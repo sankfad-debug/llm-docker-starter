@@ -1,0 +1,22 @@
+services:
+  ovh_nginx:
+    restart: always
+    image: nginx
+    container_name: ovh_nginx
+    ports:
+      - "80:80"
+    networks:
+      - sp_default
+      - lobe-network
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - "$PWD/conf.d/default.conf:/etc/nginx/conf.d/default.conf:ro"
+      - "$PWD/logs:/var/log/nginx:rw"
+
+networks:
+  sp_default:
+    driver: bridge
+  lobe-network:       # 声明外部网络
+    external: true
+    name: lobe-chat-database_lobe-network  # 需要与应用的网络名称一致
