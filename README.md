@@ -1,4 +1,4 @@
-[![Powered by DartNode](https://dartnode.com/branding/DN-Open-Source-sm.png)](https://dartnode.com "Powered by DartNode - Free VPS for Open Source")
+
 
 # Nginx Docker Compose 配置及使用说明
 
